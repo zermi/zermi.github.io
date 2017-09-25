@@ -8,17 +8,19 @@
   
     <meta name="keywords" content="Zhangxuezhi,Zhangxuezhi's Blog" />
   
-  <meta name="description" content="利用react编写UI组件库总结！zermi 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内">
+  <meta name="description" content="利用react编写UI组件库总结 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内联样式目前基">
 <meta name="keywords" content="React,前端UI库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用react编写UI组件库总结">
 <meta property="og:url" content="http://yoursite.com/2017/09/05/React、/index.html">
 <meta property="og:site_name" content="Zhangxuezhi&#39;s Blog">
-<meta property="og:description" content="利用react编写UI组件库总结！zermi 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内">
-<meta property="og:updated_time" content="2017-09-19T09:00:24.526Z">
+<meta property="og:description" content="利用react编写UI组件库总结 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内联样式目前基">
+<meta property="og:image" content="http://n1.itc.cn/img8/wb/recom/2016/08/17/147144894821161299.PNG">
+<meta property="og:updated_time" content="2017-09-25T03:19:00.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用react编写UI组件库总结">
-<meta name="twitter:description" content="利用react编写UI组件库总结！zermi 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内">
+<meta name="twitter:description" content="利用react编写UI组件库总结 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内联样式目前基">
+<meta name="twitter:image" content="http://n1.itc.cn/img8/wb/recom/2016/08/17/147144894821161299.PNG">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -120,13 +122,13 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="利用react编写UI组件库总结"><a href="#利用react编写UI组件库总结" class="headerlink" title="利用react编写UI组件库总结"></a>利用react编写UI组件库总结</h3><p>！<a href="http://n1.itc.cn/img8/wb/recom/2016/08/17/147144894821161299.PNG" target="_blank" rel="external">zermi</a></p>
+            <h3 id="利用react编写UI组件库总结"><a href="#利用react编写UI组件库总结" class="headerlink" title="利用react编写UI组件库总结"></a>利用react编写UI组件库总结</h3><p><img src="http://n1.itc.cn/img8/wb/recom/2016/08/17/147144894821161299.PNG" alt="react"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。<br>由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。</p>
 <h2 id="一、样式问题"><a href="#一、样式问题" class="headerlink" title="一、样式问题"></a>一、样式问题</h2><h4 id="1-1-尽量避免使用内联样式"><a href="#1-1-尽量避免使用内联样式" class="headerlink" title="1.1 尽量避免使用内联样式"></a>1.1 尽量避免使用内联样式</h4><p>目前基本组件的编写已经基本结束，只剩下一些如富文本编辑器，文章等稍复杂一些的组件交给老人去编写。本人被分配到编写学习演示网页的工作，在编写演示组件模块时，发现了这个问题。<br>为了让使用者清晰明了的了解组件的属性接口，我采用演示效果配合代码的演示方式。<br>在演示过程中发现，原组件的默认样式对使用造成很大影响，当然我们会提供类名接口和style接口以便于大家修改样式，不过这显然造成了一些重复工作。但这不是我们讨论的重点，重点在于我们的组件中少部分采用了内联样式，包括利用js判断之后添加的样式，比如说箭头位置利用absolute定位，</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年09月19日 17:00</p>
+        <p>最后更新： 2017年09月25日 11:19</p>
         <p>原始链接： <a class="post-url" href="/2017/09/05/React、/" title="利用react编写UI组件库总结">http://yoursite.com/2017/09/05/React、/</a></p>
         <footer>
             <a href="http://yoursite.com">
