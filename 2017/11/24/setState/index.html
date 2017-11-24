@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/24/setState/index.html">
 <meta property="og:site_name" content="Zhangxuezhi&#39;s Blog">
 <meta property="og:description" content="我的React之setState异步![react][http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg] 前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。首先，官网对setS">
-<meta property="og:updated_time" content="2017-11-24T08:34:38.308Z">
+<meta property="og:updated_time" content="2017-11-24T08:40:39.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的React之setState异步">
 <meta name="twitter:description" content="我的React之setState异步![react][http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg] 前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。首先，官网对setS">
@@ -109,11 +109,19 @@
       
             
             <h3 id="我的React之setState异步"><a href="#我的React之setState异步" class="headerlink" title="我的React之setState异步"></a>我的React之setState异步</h3><p>![react][<a href="http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg" target="_blank" rel="external">http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg</a>]</p>
-<h4 id="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"><a href="#前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。" class="headerlink" title="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"></a>前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。</h4><p>首先，官网对setState的描述是不保证立即更改应用状态。也就是说它存在同步和异步两种情况，由于同步还没遇到这种情况，所以先总结异步，如果未来乃至某一天遇到了同步并造成了某些诡异问题，再来更新总结同步问题。<br>大部分情况，我们所写的代码都在react组件的控制下，所以setState会以异步的方式执行。<br>                getScoreList(){<br>                        let children =[];<br>                        if(this.json &amp;&amp; this.json.studentInfo){<br>                            this.json.studentInfo.forEach((item,index)=&gt;{<br>                                children.push(<scorebox json="{item}" key="{"ScoreBox"+index}/">)<br>                            });<br>                        }<br>                        return children;<br>                    }</scorebox></p>
+<h4 id="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"><a href="#前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。" class="headerlink" title="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"></a>前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。</h4><p>首先，官网对setState的描述是不保证立即更改应用状态。也就是说它存在同步和异步两种情况，由于同步还没遇到这种情况，所以先总结异步，如果未来乃至某一天遇到了同步并造成了某些诡异问题，再来更新总结同步问题。<br>大部分情况，我们所写的代码都在react组件的控制下，所以setState会以异步的方式执行。<br><code>getScoreList(){
+        let children =[];
+        if(this.json &amp;&amp; this.json.studentInfo){
+            this.json.studentInfo.forEach((item,index)=&gt;{
+                children.push(&lt;ScoreBox json={item} key={&quot;ScoreBox&quot;+index}/&gt;)
+            });
+        }
+        return children;
+    }</code></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年11月24日 16:34</p>
+        <p>最后更新： 2017年11月24日 16:40</p>
         <p>原始链接： <a class="post-url" href="/2017/11/24/setState/" title="我的React之setState异步">http://yoursite.com/2017/11/24/setState/</a></p>
         <footer>
             <a href="http://yoursite.com">
@@ -157,7 +165,7 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/09/05/bolgStart/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/05/React、/" id="article-nav-older" class="article-nav-link-wrap">
       <span class="article-nav-title">利用react编写UI组件库总结</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
