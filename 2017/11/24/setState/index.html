@@ -3,24 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>利用react编写UI组件库总结 | Zhangxuezhi&#39;s Blog</title>
+  <title>我的React之setState异步 | Zhangxuezhi&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Zhangxuezhi,Zhangxuezhi's Blog" />
   
-  <meta name="description" content="利用react编写UI组件库总结 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内联样式目前基">
+  <meta name="description" content="我的React之setState异步![react][http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg] 前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。首先，官网对setS">
 <meta name="keywords" content="React,前端UI库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用react编写UI组件库总结">
-<meta property="og:url" content="http://yoursite.com/2017/09/05/React、/index.html">
+<meta property="og:title" content="我的React之setState异步">
+<meta property="og:url" content="http://yoursite.com/2017/11/24/setState/index.html">
 <meta property="og:site_name" content="Zhangxuezhi&#39;s Blog">
-<meta property="og:description" content="利用react编写UI组件库总结 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内联样式目前基">
-<meta property="og:image" content="http://n1.itc.cn/img8/wb/recom/2016/08/17/147144894821161299.PNG">
-<meta property="og:updated_time" content="2017-09-25T11:01:23.085Z">
+<meta property="og:description" content="我的React之setState异步![react][http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg] 前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。首先，官网对setS">
+<meta property="og:updated_time" content="2017-11-24T08:34:38.308Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用react编写UI组件库总结">
-<meta name="twitter:description" content="利用react编写UI组件库总结 前言本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。 一、样式问题1.1 尽量避免使用内联样式目前基">
-<meta name="twitter:image" content="http://n1.itc.cn/img8/wb/recom/2016/08/17/147144894821161299.PNG">
+<meta name="twitter:title" content="我的React之setState异步">
+<meta name="twitter:description" content="我的React之setState异步![react][http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg] 前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。首先，官网对setS">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -74,14 +72,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-React、" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-setState" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      利用react编写UI组件库总结
+      我的React之setState异步
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -94,7 +92,7 @@
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2017-09-05
+          <i class="fa fa-calendar"></i>  2017-11-24
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -110,14 +108,13 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="利用react编写UI组件库总结"><a href="#利用react编写UI组件库总结" class="headerlink" title="利用react编写UI组件库总结"></a>利用react编写UI组件库总结</h3><p><img src="http://n1.itc.cn/img8/wb/recom/2016/08/17/147144894821161299.PNG" alt="react"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本人很幸运的赶上了公司的转型，从传统的jq转向模块化开发。<br>由于公司研发力量有限（全公司人数700+），老项目众多，许多老人无法脱身，所以本人有幸一直参与UI库的各项工作。研发过程中，发现之中也发现了很多问题，打算一一总结下来，以备日后逐一优化，不断学习，如果能为他人提供帮助自然更好。由于革命尚未完成，会持续更新。</p>
-<h2 id="一、样式问题"><a href="#一、样式问题" class="headerlink" title="一、样式问题"></a>一、样式问题</h2><h4 id="1-1-尽量避免使用内联样式"><a href="#1-1-尽量避免使用内联样式" class="headerlink" title="1.1 尽量避免使用内联样式"></a>1.1 尽量避免使用内联样式</h4><p>目前基本组件的编写已经基本结束，只剩下一些如富文本编辑器，文章等稍复杂一些的组件交给老人去编写。本人被分配到编写学习演示网页的工作，在编写演示组件模块时，发现了这个问题。<br>为了让使用者清晰明了的了解组件的属性接口，我采用演示效果配合代码的演示方式。<br>在演示过程中发现，原组件的默认样式对使用造成很大影响，当然我们会提供类名接口和style接口以便于大家修改样式，不过这显然造成了一些重复工作。但这不是我们讨论的重点，重点在于我们的组件中少部分采用了内联样式，包括利用js判断之后添加的样式，比如说箭头位置利用absolute定位，</p>
+            <h3 id="我的React之setState异步"><a href="#我的React之setState异步" class="headerlink" title="我的React之setState异步"></a>我的React之setState异步</h3><p>![react][<a href="http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg" target="_blank" rel="external">http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg</a>]</p>
+<h4 id="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"><a href="#前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。" class="headerlink" title="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"></a>前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。</h4><p>首先，官网对setState的描述是不保证立即更改应用状态。也就是说它存在同步和异步两种情况，由于同步还没遇到这种情况，所以先总结异步，如果未来乃至某一天遇到了同步并造成了某些诡异问题，再来更新总结同步问题。<br>大部分情况，我们所写的代码都在react组件的控制下，所以setState会以异步的方式执行。<br>                getScoreList(){<br>                        let children =[];<br>                        if(this.json &amp;&amp; this.json.studentInfo){<br>                            this.json.studentInfo.forEach((item,index)=&gt;{<br>                                children.push(<scorebox json="{item}" key="{"ScoreBox"+index}/">)<br>                            });<br>                        }<br>                        return children;<br>                    }</scorebox></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年09月25日 19:01</p>
-        <p>原始链接： <a class="post-url" href="/2017/09/05/React、/" title="利用react编写UI组件库总结">http://yoursite.com/2017/09/05/React、/</a></p>
+        <p>最后更新： 2017年11月24日 16:34</p>
+        <p>原始链接： <a class="post-url" href="/2017/11/24/setState/" title="我的React之setState异步">http://yoursite.com/2017/11/24/setState/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="Zermi">
@@ -152,30 +149,25 @@
     <aside class="post-toc-pos">
         <nav class="post-toc-wrap">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利用react编写UI组件库总结"><span class="post-toc-text">利用react编写UI组件库总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、样式问题"><span class="post-toc-text">一、样式问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-1-尽量避免使用内联样式"><span class="post-toc-text">1.1 尽量避免使用内联样式</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我的React之setState异步"><span class="post-toc-text">我的React之setState异步</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"><span class="post-toc-text">前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2017/09/05/bolgStart/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          利用react编写UI组件库总结
-        
-      </span>
-    </a>
   
+    <a href="/2017/09/05/bolgStart/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">利用react编写UI组件库总结</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
   
 </nav>
 
 
 
     
-        <div id="SOHUCS" sid="React、" ></div>
+        <div id="SOHUCS" sid="setState" ></div>
 <script type="text/javascript">
     (function(){
         var appid = 'true';
