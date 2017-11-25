@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/24/setState/index.html">
 <meta property="og:site_name" content="Zhangxuezhi&#39;s Blog">
 <meta property="og:description" content="我的React之setState异步![react][http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg] 前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。首先，官网对setS">
-<meta property="og:updated_time" content="2017-11-24T08:40:39.857Z">
+<meta property="og:updated_time" content="2017-11-25T01:26:17.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的React之setState异步">
 <meta name="twitter:description" content="我的React之setState异步![react][http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg] 前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。首先，官网对setS">
@@ -109,19 +109,14 @@
       
             
             <h3 id="我的React之setState异步"><a href="#我的React之setState异步" class="headerlink" title="我的React之setState异步"></a>我的React之setState异步</h3><p>![react][<a href="http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg" target="_blank" rel="external">http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1204/12/c0/11221986_1334164420600_0_1024x1024.jpg</a>]</p>
-<h4 id="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"><a href="#前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。" class="headerlink" title="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"></a>前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。</h4><p>首先，官网对setState的描述是不保证立即更改应用状态。也就是说它存在同步和异步两种情况，由于同步还没遇到这种情况，所以先总结异步，如果未来乃至某一天遇到了同步并造成了某些诡异问题，再来更新总结同步问题。<br>大部分情况，我们所写的代码都在react组件的控制下，所以setState会以异步的方式执行。<br><code>getScoreList(){
-        let children =[];
-        if(this.json &amp;&amp; this.json.studentInfo){
-            this.json.studentInfo.forEach((item,index)=&gt;{
-                children.push(&lt;ScoreBox json={item} key={&quot;ScoreBox&quot;+index}/&gt;)
-            });
-        }
-        return children;
-    }</code></p>
+<h4 id="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"><a href="#前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。" class="headerlink" title="前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"></a>前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。</h4><p>首先，官网对setState的描述是不保证立即更改应用状态。也就是说它存在同步和异步两种情况，由于同步还没遇到这种情况，所以先总结异步，如果未来乃至某一天遇到了同步并造成了某些诡异问题，再来更新总结同步问题。<br>大部分情况，我们所写的代码都在react组件的控制下，所以setState会以异步的方式执行。<br><figure class="highlight plain"><figcaption><span>default class setStateDemo extends UIComponent&#123;</span><a href="//">这是我们公司自己封装的底层库，功能与React.Component类同。</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">    get className()&#123;</div><div class="line">        return &quot;setStateDemo&quot;;</div><div class="line">    &#125;</div><div class="line">    get isRegisterEvent()&#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">    initState()&#123; // 我们创建state的方法，这个是在constructor下的，所以都一样啦。</div><div class="line">        let state = super.initState();</div><div class="line">        // 演示用状态</div><div class="line">        state.demo = &quot;初始值&quot;;</div><div class="line">        return state;</div><div class="line">    &#125;</div><div class="line">    componentDidMount()&#123;</div><div class="line">        this.setState(&#123;demo : &quot;变化值&quot;&#125;)；</div><div class="line">        console.log(this.state.demo)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在浏览器打印出的值为 初始值。<br>显然并不是我们所想的变化值，所以这也就是所说的setState是异步的。</p>
+<h4 id="当然，往往我们想要的是setState之后的变化值"><a href="#当然，往往我们想要的是setState之后的变化值" class="headerlink" title="当然，往往我们想要的是setState之后的变化值"></a>当然，往往我们想要的是setState之后的变化值</h4><p>官方给出的方法是回调函数（callback），setState支持第二个参数。<br>即<figure class="highlight plain"><figcaption><span>callback])```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">    componentDidMount()&#123;</div><div class="line">        this.setState(&#123;demo : &quot;变化值&quot;&#125;,()=&gt;&#123;</div><div class="line">            console.log(this.state.demo)</div><div class="line">        &#125;)；</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>这里返回的就是我们想要的变化值。而为什么setState要设计为异步执行？<br>由于setState改变状态值从而还会进一步控制render，react会在组件渲染后统一合并这些setState，然后再次渲染。在我的理解看，这对性能会有很大提升，如果同步执行可能会造成组件多次重复渲染，</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年11月24日 16:40</p>
+        <p>最后更新： 2017年11月25日 09:26</p>
         <p>原始链接： <a class="post-url" href="/2017/11/24/setState/" title="我的React之setState异步">http://yoursite.com/2017/11/24/setState/</a></p>
         <footer>
             <a href="http://yoursite.com">
@@ -157,7 +152,7 @@
     <aside class="post-toc-pos">
         <nav class="post-toc-wrap">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我的React之setState异步"><span class="post-toc-text">我的React之setState异步</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"><span class="post-toc-text">前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我的React之setState异步"><span class="post-toc-text">我的React之setState异步</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。"><span class="post-toc-text">前言：经过一个项目的探索和忙碌，终于在测试间隙腾出时间总结一二。setState的问题最为实用和突出，放在最先总结。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#当然，往往我们想要的是setState之后的变化值"><span class="post-toc-text">当然，往往我们想要的是setState之后的变化值</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
