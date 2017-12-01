@@ -6,7 +6,7 @@
   <title>Zhangxuezhi&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    <meta name="keywords" content="Zhangxuezhi,Zhangxuezhi's Blog" />
+    <meta name="keywords" content="MinHow,MinHow's Blog" />
   
   <meta name="description" content="关于我从事web前端开发，目前使用es6 webpack sass react等技术；对react十分钟爱，热爱新技术，新事物。 关于工作目前在长春工作，未来可能去任何地方工作。o.0。 关于座右铭All for the sake of high position and great wealth（一切都是为了荣华富贵）没错，就是这么直白。 关于爱好研发（很有成就感），足球，游泳，音乐，追女孩。">
 <meta property="og:type" content="website">
@@ -21,9 +21,6 @@
   
   
     <link rel="icon" href="/favicon.ico">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
@@ -40,6 +37,34 @@
       <header id="header">
     <div id="banner"></div>
     <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MinHow&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
         <div id="header-row">
             <div id="logo">
                 <a href="/">
@@ -50,7 +75,7 @@
                 <div id="header-title">
                     
                     <h2>
-                        Zhangxuezhi&#39;s Blog
+                        MinHow&#39;s Blog
                     </h2>
                     
                 </div>
@@ -64,6 +89,18 @@
             </div>
             <nav class="header-nav">
                 <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
                     
                 </div>
             </nav>
@@ -101,8 +138,93 @@
 </div>
 
       
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
     </div>
     <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/about/&title=Zhangxuezhi's Blog&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/about/&title=Zhangxuezhi's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/about/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Zhangxuezhi's Blog&url=http://yoursite.com/about/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/about/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/about/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
         <ul class="article-footer-menu">
             
             
@@ -113,9 +235,8 @@
 </article>
 
 
-    <aside class="post-toc-pos">
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <h4>TOC</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于我"><span class="post-toc-text">关于我</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于工作"><span class="post-toc-text">关于工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于座右铭"><span class="post-toc-text">关于座右铭</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于爱好"><span class="post-toc-text">关于爱好</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于联系我"><span class="post-toc-text">关于联系我</span></a></li></ol>
         </nav>
     </aside>
@@ -123,15 +244,6 @@
 
 
 
-    
-        <div id="SOHUCS" sid="" ></div>
-<script type="text/javascript">
-    (function(){
-        var appid = 'true';
-        var conf = 'ture';
-        var width = window.innerWidth || document.documentElement.clientWidth;
-        if (width < 960) {
-            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
     
 </section>
         
@@ -151,7 +263,7 @@
 
 
       <p>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
         Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
       &copy; 2017 Zermi<br>
       </p>
@@ -164,27 +276,67 @@
   var mihoConfig = {
       root: "http://yoursite.com",
       animate: true,
-      isHome: false
+      isHome: false,
+      share: true,
+      reward: 1
   }
 </script>
 <div class="sidebar">
-    <div id="sidebar-search">
+    <div id="sidebar-search" title="Search">
         <i class="fa fa-search"></i>
     </div>
-    <div class="sidebar-menu">
-        <i class="fa fa-bars"></i>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
     </div>
     <div id="sidebar-top">
         <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
     </div>
 </div>
-<div class="sidebar-menu-box">
+<div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/React/">React</a><a class="category-link" href="/categories/我说我话/">我说我话</a>
+        </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/前端UI库/" style="font-size: 10px;">前端UI库</a>
+            <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/前端UI库/" style="font-size: 10px;">前端UI库</a> <a href="/tags/我说我话/" style="font-size: 10px;">我说我话</a> <a href="/tags/长期更新/" style="font-size: 10px;">长期更新</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/前端UI库/" style="font-size: 10px;">前端UI库</a> <a href="/tags/我说我话/" style="font-size: 10px;">我说我话</a> <a href="/tags/长期更新/" style="font-size: 10px;">长期更新</a>
+        </div>
+    </div>
 </div>
 <div class="search-wrap">
     <span class="search-close">&times;</span>
@@ -195,12 +347,12 @@
         <a id="search-submit" href="javascript:;">
             <i class="fa fa-search"></i>
         </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
 </div>
 
-<div class="search-container" id="search-container">
-    <ul class="search-result" id="search-result">
-    </ul>
-</div>
 <div id="search-tpl">
     <li class="search-result-item">
         <a href="{url}" class="search-item-li">
@@ -209,7 +361,7 @@
     </li>
 </div>
 <script src="/js/search.js"></script>
-<script src="/js/sidebar-menu-box.js"></script>
+<script src="/js/main.js"></script>
 
 
   <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>

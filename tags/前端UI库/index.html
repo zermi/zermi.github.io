@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 前端UI库 | Zhangxuezhi&#39;s Blog</title>
+  <title>Mot-clé: 前端UI库 | Zhangxuezhi&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    <meta name="keywords" content="Zhangxuezhi,Zhangxuezhi's Blog" />
+    <meta name="keywords" content="MinHow,MinHow's Blog" />
   
   <meta property="og:type" content="website">
 <meta property="og:title" content="Zhangxuezhi&#39;s Blog">
@@ -17,9 +17,6 @@
   
   
     <link rel="icon" href="/favicon.ico">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
@@ -36,6 +33,34 @@
       <header id="header">
     <div id="banner"></div>
     <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MinHow&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
         <div id="header-row">
             <div id="logo">
                 <a href="/">
@@ -46,7 +71,7 @@
                 <div id="header-title">
                     
                     <h2>
-                        Zhangxuezhi&#39;s Blog
+                        MinHow&#39;s Blog
                     </h2>
                     
                 </div>
@@ -60,6 +85,18 @@
             </div>
             <nav class="header-nav">
                 <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
                     
                 </div>
             </nav>
@@ -112,40 +149,6 @@
 </article>
 
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/React、/" class="archive-article-date">
-  <time datetime="2017-09-05T02:09:15.000Z" itemprop="datePublished">09-05</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/React、/"  >利用react编写UI组件库总结</a>
-    </h1>
-  
-
-    </header>
-      
-        <div class="archive-post-footer">
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/React/" class="color1">React</a>
-      
-    <a href="/tags/前端UI库/" class="color1">前端UI库</a>
-      
-  </li>
-
-        </div>
-      
-  </div>
-</article>
-
-  
   
     </div></section>
   
@@ -168,7 +171,7 @@
 
 
       <p>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
         Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
       &copy; 2017 Zermi<br>
       </p>
@@ -181,27 +184,67 @@
   var mihoConfig = {
       root: "http://yoursite.com",
       animate: true,
-      isHome: false
+      isHome: false,
+      share: true,
+      reward: 1
   }
 </script>
 <div class="sidebar">
-    <div id="sidebar-search">
+    <div id="sidebar-search" title="Search">
         <i class="fa fa-search"></i>
     </div>
-    <div class="sidebar-menu">
-        <i class="fa fa-bars"></i>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
     </div>
     <div id="sidebar-top">
         <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
     </div>
 </div>
-<div class="sidebar-menu-box">
+<div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/React/">React</a><a class="category-link" href="/categories/我说我话/">我说我话</a>
+        </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/前端UI库/" style="font-size: 10px;">前端UI库</a>
+            <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/前端UI库/" style="font-size: 10px;">前端UI库</a> <a href="/tags/我说我话/" style="font-size: 10px;">我说我话</a> <a href="/tags/长期更新/" style="font-size: 10px;">长期更新</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/前端UI库/" style="font-size: 10px;">前端UI库</a> <a href="/tags/我说我话/" style="font-size: 10px;">我说我话</a> <a href="/tags/长期更新/" style="font-size: 10px;">长期更新</a>
+        </div>
+    </div>
 </div>
 <div class="search-wrap">
     <span class="search-close">&times;</span>
@@ -212,12 +255,12 @@
         <a id="search-submit" href="javascript:;">
             <i class="fa fa-search"></i>
         </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
 </div>
 
-<div class="search-container" id="search-container">
-    <ul class="search-result" id="search-result">
-    </ul>
-</div>
 <div id="search-tpl">
     <li class="search-result-item">
         <a href="{url}" class="search-item-li">
@@ -226,7 +269,7 @@
     </li>
 </div>
 <script src="/js/search.js"></script>
-<script src="/js/sidebar-menu-box.js"></script>
+<script src="/js/main.js"></script>
 
 
   <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
