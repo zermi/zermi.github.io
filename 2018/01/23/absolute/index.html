@@ -90,21 +90,26 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://images.unsplash.com/photo-1481624362406-b7817fa45ecf?auto=format&amp;fit=crop&amp;w=1350&amp;q=80);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >关于我</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://images.pexels.com/photos/395132/pexels-photo-395132.jpeg?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >清楚Absolute脱离文档流以及绝对定位内部压缩</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>从事web前端开发，目前使用es6 webpack sass react等技术；对react十分钟爱，热爱新技术，新事物。</p>
-<h3 id="关于工作"><a href="#关于工作" class="headerlink" title="关于工作"></a>关于工作</h3><p>目前在长春工作，未来可能去任何地方工作。o.0。</p>
-<h3 id="关于座右铭"><a href="#关于座右铭" class="headerlink" title="关于座右铭"></a>关于座右铭</h3><p>All for the sake of high position and great wealth（一切都是为了荣华富贵）<br>没错，就是这么直白。</p>
-<h3 id="关于爱好"><a href="#关于爱好" class="headerlink" title="关于爱好"></a>关于爱好</h3><p>研发（很有成就感），足球，游泳，音乐，照顾小师妹。</p>
-<h3 id="关于联系我"><a href="#关于联系我" class="headerlink" title="关于联系我"></a>关于联系我</h3><ul>
-<li>QQ：137486714</li>
-<li>新浪微博： <a href="http://weibo.com/zhanxguezhi" target="_blank" rel="external">爱你不娶你的张学智</a></li>
-<li>微信不告诉你。</li>
+                <h2 id="脱离文档流"><a href="#脱离文档流" class="headerlink" title="脱离文档流"></a>脱离文档流</h2><p>首先得明确absolute这货不叫浮动。不过当子设置absolute后父容器一样会失去高度。<br>明确不叫浮动的意义主要是说它不同于float，所以利用clearfix是无法清楚它的浮动的。</p>
+<ul>
+<li><p>利用js方法<br>利用js方法获取div的高度，利用onload事件去撑开父容器的高度。<br>但是会出现用户起初打开网页时父容器并没有高度，当事件触发时才会去撑开，造成页面出现卡顿，用户体验很差。如果网络不给力的话，可能会更差。所以不推荐使用。</p>
+</li>
+<li><p>设置父容器定高<br>这里说css方法并不准确，因为不是什么方法，只是一种强行撑开。</p>
+</li>
 </ul>
-<h3 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h3><p><a href="dwbbb.com">dwb</a></p>
+<h2 id="内部压缩"><a href="#内部压缩" class="headerlink" title="内部压缩"></a>内部压缩</h2><p><img src="http://m.qpic.cn/psb?/V10spI0z3wmsnP/ZFGrSt7JWhfF29pOun2JTRcrOGny9WU4PGhE8MUjQ2k!/b/dFYBAAAAAAAA&amp;bo=HwJaAQAAAAADB2Q!&amp;rf=viewer_4" alt="内部压缩"></p>
+<p>这是个报告评语随机分布的一个需求，我的思路是以圆心定位，随机绝对定位弹出评语。当left为负往左时，文本框直接出去了，所以正常。当往右的时候！！重点来了，外容器有大小的话，文本框不会优先溢出外容器，他会先自我压缩以适应这个位置。所以就造成了如图情况的发生。</p>
+<p>我所想到的解决方案是</p>
+<ul>
+<li>当然可以类似left，给right负值（与left同理）。</li>
+<li>采用white-space：nowrap；阻止文字换行。</li>
+</ul>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>抛砖引玉，如有错误，欢迎指正。</p>
 
             </div>
 
@@ -167,8 +172,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/about/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/about/index.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2018/01/23/absolute/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/01/23/absolute/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
